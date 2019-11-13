@@ -1,6 +1,7 @@
 /*!
  * \file TermArrayList.h
  * \author Dr. Spiegel
+ *
  * \brief TermList subclass that uses C++ Array
  *
  * This subclass of the TermList abstract class uses a c++ array filled with Term instances to store the polynomial.

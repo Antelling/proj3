@@ -1,11 +1,11 @@
-/****************************************************************/
-/*   Author:         Anthony Dellinger, modified from Dr. Spiegel's template */
-/*   Course:         CSC237                                       */
-/*   Filename:       TermDblList.h                                */
-/*   Purpose:        This subclass of the TermList                */
-/*                   abstract class uses a double linked list with*/
-/*                   Term instances to store the polynomial.      */
-/****************************************************************/
+/*!
+ * \file TermDblList.h
+ * \author Anthony Dellinger
+ *
+ * \brief Header file for TermList subclass that uses doubly linked list.
+ *
+ * This subclass of the TermList abstract class uses a doubly linked list filled with Term instances to store the polynomial.
+ */
 
 
 #ifndef TERMDBLLIST_H
@@ -19,27 +19,46 @@
 
 using namespace std;
 
+/*!
+ * \class TermDblList
+ * \brief TermList subclass that uses doubly linked list
+ */
 class TermDblList : public TermList {
 public:
 
+	/*!
+	 * Constructor for empty TermDblList
+	 */
 	TermDblList();
 
-	// Put a string of strings into the list object
-	//void readIntoList(ifstream &source);
+	/*!
+	 * \brief reads and parses a file containing a polynomial instance, and stores the polynomial in this TermDblList
+	 * @param string filename file to read
+	 */
 	void readIntoList(string filename);
 
-	// Print the data iteratively
+	/*!
+	 * \brief prints the polynomial by iteratively looping over it
+	 */
 	void printIteratively();
 
-	//print the data recursively
+	/*!
+	 * \brief prints the polynomial by recursively looping over it
+	 */
 	void printRecursively();
 
-	// Evaluate the Polynomial
+	/*!
+	 * \brief evaluate the polynomial for a value
+	 * @param x value to evaluate for
+	 * @return value of result of evaluation
+	 */
 	virtual double operator()(double x) const;
 
 private:
+	/*!
+	 * \brief The linked list used for internal storage.
+	 */
 	DblLink<Term> llist;
-	bool tester;
 };
 
 #endif

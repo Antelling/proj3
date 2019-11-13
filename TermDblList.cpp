@@ -1,11 +1,10 @@
-/****************************************************************/
-/*   Author:         Anthony Dellinger                          */
-/*   Course:         CSC237                                     */
-/*   Filename:       TermDblList.cpp                            */
-/*   Purpose:        This implementation of the TermList        */
-/*                   abstract class uses doubly linked list with*/
-/*                   Term instances to store the polynomial.    */
-/****************************************************************/
+/*!	\file TermDblList.cpp
+ *	\brief Implementation of TermDblList class
+ *	\author Anthony Dellinger
+ *
+ *	This implementation of the TermList abstract class
+ *	uses a doubly linked list filled with Term instances to store the polynomial.
+ */
 
 #include <fstream>
 #include <iostream>
@@ -85,7 +84,12 @@ void TermDblList::printIteratively() {
 	cout << "Time taken for printing: " << ticks.count() << " microseconds.\n";
 }
 
-//FIXME:make docstrings
+/*!
+ * \brief recursive function called by printRecursively
+ * @param DblLinkItr<Term> iterator pointing to first element of linked list to be printed
+ *
+ * recursion cannot be done directly from printRecursively, as it has the wrong signature.
+ */
 void DLLRecursionHelper(DblLinkItr<Term> itr) {
 	cout << itr();
 	if(itr.isLastNode()) { return; }

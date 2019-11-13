@@ -1,11 +1,8 @@
-/****************************************************************/
-/*   Author:         Anthony Dellinger, modified from Dr. Spiegel's template */
-/*   Course:         CSC237                                       */
-/*   Filename:       TermVectorList.h                             */
-/*   Purpose:        This subclass of the TermList                */
-/*                   abstract class uses an stl vector with       */
-/*                   Term instances to store the polynomial.      */
-/****************************************************************/
+/*!
+ * \file TermVectorList.h
+ * \author Anthony Dellinger
+ * \brief Header file for TermList subclass that uses an stl vector of Terms
+ */
 
 
 #ifndef TERMVECTORLIST_H
@@ -19,26 +16,46 @@
 
 using namespace std;
 
+/*!
+ * \class TermVectorList
+ * \brief TermList subclass that uses an stl vector
+ */
 class TermVectorList : public TermList {
 public:
 
-  TermVectorList();
+	/*!
+	 * Constructor for empty TermVectorList
+	 */
+	TermVectorList();
 
-  // Put a string of strings into the list object
-  //void readIntoList(ifstream &source);
-  void readIntoList(string filename);
+	/*!
+	 * \brief reads and parses a file containing a polynomial instance, and stores the polynomial in this TermVectorList
+	 * @param string filename file to read
+	 */
+	void readIntoList(string filename);
 
-  // Print the data iteratively
-  void printIteratively();
+	/*!
+	 * \brief prints the polynomial by iteratively looping over it
+	 */
+	void printIteratively();
 
-    // Print the data recursively
-    void printRecursively();
+	/*!
+	 * \brief prints the polynomial by recursively looping over it
+	 */
+	void printRecursively();
 
-  // Evaluate the Polynomial
-  virtual double operator()(double x) const;
+	/*!
+	 * \brief evaluate the polynomial for a value
+	 * @param x value to evaluate for
+	 * @return value of result of evaluation
+	 */
+	virtual double operator()(double x) const;
 
 private:
-  vector<Term> polyVec;
+	/*!
+	 * \brief the stl vector used for internal storage
+	 */
+	vector <Term> polyVec;
 };
-  
+
 #endif

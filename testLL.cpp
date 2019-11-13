@@ -1,3 +1,12 @@
+/*!
+ * \file testLL.cpp
+ * \author Anthony Dellinger
+ * \brief Driver for interacting with DblLinkedList class from command line
+ *
+ * Provides options to add and element, remove an element, display the list, display the list backwards,
+ * or quit.
+ */
+
 /************************************************************/
 /*   Author: Anthony Dellinger */
 /*   Major: Computer Science	*/
@@ -15,59 +24,48 @@
 #include "DblLinkedList.h"
 using namespace std;
 
-/*************************************************************************/
-/*   Function name:   getMenuOptions	*/
-/*   Description:   Displays option to add, remove, print forwards, print backwards, or quit to user. */
-/*   Parameters:    none */
-/*   Return Value:  int - value of what menu item the user selected:
+
+/*!
+ * \brief Displays option to add, remove, print forwards, print backwards, or quit to user.
+ * @return int value of option they picked.
+ *
+ * Option values are:
  * 		1 - insert
  * 		2 - remove
  * 		3 - print forwards
  * 		4 - print backwards
- * 		any other value - quit*/
-/*************************************************************************/
+ * 		any other value - quit
+ */
 int getMenuOptions();
 
-/*************************************************************************/
-/*   Function name:   insertCase	*/
-/*   Description:   Called when the user chooses the insertion case. Prompts for a value and inserts
- * 					into the passed link list. */
-/*   Parameters:    &llist - reference to the linked list to modify - input/output */
-/*   Return Value:  void */
-/*************************************************************************/
+/*!
+ * \brief Called when the user chooses the insertion case. Prompts for a value and inserts into the passed link list.
+ * @param DblLink<int>& reference to list to insert into - input/output
+ */
 void insertCase(DblLink<int> &llist);
 
-/*************************************************************************/
-/*   Function name:   removeCase	*/
-/*   Description:   Called when the user chooses the removal case. Prompts for a value,
- * 					and if the value is in the list, removes the value.
-/*   Parameters:    &llist - reference to the linked list to modify - input/output */
-/*   Return Value:  void */
-/*************************************************************************/
+/*!
+ * \brief Called when the user chooses the removal case. Prompts for a value, and if the value is in the list, removes the value.
+ * @param DblLink<int>& reference to list to remove from - input/output
+ */
 void removeCase(DblLink<int> &llist);
 
-/*************************************************************************/
-/*   Function name:   printForward	*/
-/*   Description:   Prints the passed link list in order of the elements.
-/*   Parameters:    &llist - reference to the linked list to print - input */
-/*   Return Value:  void */
-/*************************************************************************/
+/*!
+ * \brief Prints the passed link list in order of the elements.
+ * @param DblLink<int>& reference to list to print - input
+ */
 void printForward(DblLink<int> &llist);
 
-/*************************************************************************/
-/*   Function name:   printForward	*/
-/*   Description:   Prints the passed link list in reverse order of the elements.
-/*   Parameters:    &llist - reference to the linked list to print - input */
-/*   Return Value:  void */
-/*************************************************************************/
+/*!
+ * \brief Prints the passed link list in reverse order of the elements.
+ * @param DblLink<int>& reference to list to print - input
+ */
 void printBackward(DblLink<int> &llist);
 
-/*************************************************************************/
-/*   Function name:   main	*/
-/*   Description:   Continually prompts user for action, and then dispatches action on  linked list.
-/*   Parameters:    none */
-/*   Return Value:  int - status flag, returns 0 on intended exit.  */
-/*************************************************************************/
+/*!
+ * \brief Continually prompts user for action, and then dispatches action on  linked list.
+ * @return int status flag for operating system, returns 0 on intended exit.
+ */
 int main() {
 	bool cont = true;
 	DblLink<int> llist;

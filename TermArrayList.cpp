@@ -23,15 +23,13 @@ using namespace std;
 TermArrayList::TermArrayList()
 { numTerms=0; }
 
-/*********************************************************************
-	*   Function name:  compareTerms
-	*   Description:   determines if first term has a greater expn
- *   					than second term. Used by <algorithm> sort
-	*   Parameters:  Term a - first term, input
- *   				 Term b - second term, input
-	*
-	*   Return Value: bool - is a > b
-	*********************************************************************/
+
+/*!
+ * \brief Determines if first term has a greater exponent than the second.
+ * @param Term first Term
+ * @param Term second Term
+ * @return bool true if first > second
+ */
 bool compareTerms(Term a, Term b) {
 	return a > b;
 }
@@ -96,6 +94,14 @@ void TermArrayList::printIteratively() {
 	cout << "Time taken for printing: " << ticks.count() << " microseconds.\n";
 }
 
+/*!
+ * \brief recursive function called by printRecursively
+ * @param i index of current Term
+ * @param Term* ThePoly pointer to array of Terms
+ * @param numTerms length of array of Terms
+ *
+ * Recursion can not be done directly from printRecursively, as it has the wrong signature.
+ */
 void arrayRecursionHelper(int i, Term* ThePoly, int numTerms) {
 	cout <<  ThePoly[i] << (i < numTerms-1?" + ":"");
 	if (i < numTerms-1){
