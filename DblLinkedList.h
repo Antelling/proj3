@@ -12,7 +12,6 @@
 /*   Course: CSC237	*/
 /*   Professor Name: Dr. Spiegel	*/
 /*   Assignment: #2a	*/
-/*   Filename: proj2.h	*/
 /************************************************************/
 
 #ifndef _LinkedList_

@@ -1,4 +1,4 @@
-/*!	\file DblLinkedList.h
+/*!	\file app.cpp
  *	\brief Runs data structure functions on a data file
  *	\author Dr. Spiegel, modified by Anthony Dellinger
  *

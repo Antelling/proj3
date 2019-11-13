@@ -1,12 +1,10 @@
-/****************************************************************/
-/*   Author:         Dr. Spiegel                                */
-/*   					modified by Anthony Dellinger           */
-/*   Course:         CIS237                                     */
-/*   Filename:       TermArrayList.cpp                          */
-/*   Purpose:        This implementation of the TermList        */
-/*                   abstract class uses a c++ array filled with*/
-/*                   Term instances to store the polynomial.    */
-/****************************************************************/
+/*!	\file TermArrayList.cpp
+ *	\brief Implementation of TermArrayList class
+ *	\author Dr. Spiegel, modified by Anthony Dellinger
+ *
+ *	This implementation of the TermList abstract class
+ *	uses a c++ array filled with Term instances to store the polynomial.
+ */
 
 #include <fstream>
 #include <iostream>

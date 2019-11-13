@@ -1,12 +1,10 @@
-/****************************************************************/
-/*   Author:         Dr. Spiegel                                */
-/*   Course:         CSC237                                     */
-/*   Filename:       TermArrayList.h                            */
-/*   Purpose:        This subclass of the TermList              */
-/*                   abstract class uses a c++ array filled with*/
-/*                   Term instances to store the polynomial.    */
-/****************************************************************/
-
+/*!
+ * \file TermArrayList.h
+ * \author Dr. Spiegel
+ * \brief TermList subclass that uses C++ Array
+ *
+ * This subclass of the TermList abstract class uses a c++ array filled with Term instances to store the polynomial.
+ */
 
 #ifndef WORDDATALIST_H
 #define WORDDATALIST_H
@@ -18,31 +16,59 @@
 
 using namespace std;
 
+/*!
+ * \class TermArrayList
+ * \brief TermList subclass that uses C++ Array
+ *
+ * Has a maximum capacity of 10 elements.
+ */
 class TermArrayList : public TermList {
 public:
 
-  TermArrayList();
+	/*!
+	 * \brief Constructor for empty TermArrayList
+	 */
+	TermArrayList();
 
-  // Put a string of strings into the list object
-  //void readIntoList(ifstream &source);
-  void readIntoList(string filename);
+	/*!
+	 * \brief reads and parses a file containing a polynomial instance, and stores the polynomial in TermArrayList
+	 * @param string filename file to read
+	 */
+	void readIntoList(string filename);
 
-  // Print the data iteratively
-  void printIteratively();
+	/*!
+	 * \brief prints the polynomial by iteratively looping over it
+	 */
+	void printIteratively();
 
-    // Print the data recursively
-    void printRecursively();
-  
-  // Print the data recursively with a pointer
-  void printPtr();
+	/*!
+	 * \brief prints the polynomial by recursively looping over it
+	 */
+	void printRecursively();
 
-  // Evaluate the Polynomial
-  virtual double operator()(double x) const;
+	/*!
+	 * Print the data by looping using pointer arithmetic.
+	 */
+	void printPtr();
+
+	/*!
+	 * \brief evaluate the polynomial for a value
+	 * @param x value to evaluate for
+	 * @return value of result of evaluation
+	 */
+	virtual double operator()(double x) const;
 
 private:
-  Term ThePoly[10];
-  int numTerms;
-  
+	/*!
+	 * \brief internal storage array
+	 */
+	Term ThePoly[10];
+
+	/*!
+	 * \brief internal storage of current length of Term array
+	 */
+	int numTerms;
+
 };
-  
+
 #endif
