@@ -1,3 +1,7 @@
+/*!
+ * \brief Header and implementation of Node used in Dbl
+ */
+
 /****************************************************************/
 /*   Author:         Dr. Spiegel                                */
 /*   Course:         CSC237                                     */

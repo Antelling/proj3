@@ -1,4 +1,4 @@
-COMPILER  = g++ -std=c++11
+COMPILER  = g++ -std=c++0x
 
 DEBUG  = 
 

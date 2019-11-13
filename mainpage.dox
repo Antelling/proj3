@@ -1,0 +1,24 @@
+/**
+\mainpage Project 3 Documentation 
+
+The following documentation describes three different data structures used to store a polynomial:
+
+- A c++ array of terms 
+- a doubly linked list of terms
+- and an stl vector of terms
+
+Here, a term is an instance of a Term object. 
+
+Each datastructure inherits from, and therefore conforms to, the following TermList base functions:
+
+- readIntoList() - read a file into the datastructure
+- printIteratively - display the polynomial in an iterative manner
+- printRecursively - display the polynomial in a recursive manner
+- printPrt - display the polynomial using pointer arithmetic, if supported by the datastructure
+- () operator - evaluate the polynomial for a supplied value
+
+<hr>
+
+There are also files to handle running and testing these datastructures. 
+
+*/

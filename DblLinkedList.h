@@ -1,3 +1,7 @@
+/*!	\file DblLinkedList.h
+ *	\brief Header for custom Doubly Linked List implementation.
+ */
+
 /************************************************************/
 /*   Author: Anthony Dellinger */
 /*   Major: Computer Science	*/
@@ -18,19 +22,41 @@
 #include "Node.h"
 using namespace std;
 
-/*************************************************************************/
-/*   Class name:   DblLink	*/
-/*   Description:   A doubly linked list, holding data of type eltType, null terminated at start and end. */
-/*************************************************************************/
+/*!
+ *   \class DblLink
+ *   \brief A doubly linked list, holding data of type eltType, null terminated at start and end.
+ *
+ *   The Doubly Linked List is made up of Nodes, where each Node has a pointer to its 
+ *   preceding node, successive node, and contains data of any type, as long as it is
+ *   consistent within every Node. 
+ */
 template <typename eltType> class DblLink
 {
 public:
-	DblLink(); // empty constructor
+	/*!
+ * \fn Constructor
+ * Requires: Nothing
+ * Constructs an emtpy doubly linked list. 
+ */
+	DblLink();
+	/*!
+ * \fn Deep Copy Constructor
+ * \param DblLink& reference to other doubly linked list
+ * \returns deep copy of passed doubly linked list
+ */
 	DblLink(DblLink&); // deep copy constructor
 	~DblLink(); //destructor
 	DblLink& operator=(const DblLink&); //deep copy during assignment
 	bool empty(); //is empty?
+
+	/*! 
+ 	* Determine if the linked list contains the element 
+ 	*/
 	bool find(eltType); //does linked list contain element?
+
+	/*! 
+	 * \brief insert such that order is preserved 
+	 */
 	void insert(eltType); //ordered insert
 	void remove(eltType); //removes element
 
@@ -63,9 +89,8 @@ private:
 };
 
 /*************************************************************************/
-/*   Function name:   DblLink<eltType>()	*/
-/*   Description:   constructs empty linked list
-/*   Parameters:    none */
+/*   \fn   DblLink<eltType>()	*/
+/*   \brief   constructs empty linked list
 /*************************************************************************/
 template <typename eltType> DblLink<eltType>::DblLink() : head(NULL)
 {}
@@ -102,13 +127,9 @@ template <typename eltType> DblLink<eltType>
 }
 
 
-/*************************************************************************/
-/*   Function name:   insert	*/
-/*   Description:   inserts the passed value into the linked list such that it remains ordered.
-/*   Parameters:    eltType x - value to insert - input */
-/*   Return Value:  void  */
-/*************************************************************************/
-// Place x into the list in order
+/*!
+*	\brief inserts the passed value into the linked list such that it remains ordered.
+*/
 template <typename eltType>
 void DblLink<eltType>::insert(eltType x) {
 	if (empty() || x > head->data) {
