@@ -34,35 +34,64 @@ template <typename eltType> class DblLink
 {
 public:
 	/*!
- * \fn Constructor
- * Requires: Nothing
- * Constructs an emtpy doubly linked list. 
- */
+	 * \brief Constructor for empty doubly linked list
+ 	*/
 	DblLink();
+
 	/*!
- * \fn Deep Copy Constructor
- * \param DblLink& reference to other doubly linked list
- * \returns deep copy of passed doubly linked list
- */
+	 * \brief Constructor for deep copy of passed linked list
+ 	*/
 	DblLink(DblLink&); // deep copy constructor
+
+	/*!
+	 * \brief Constructor for linked list
+ 	*/
 	~DblLink(); //destructor
+
+	/*!
+	 * \brief deep copies right hand side of assignment to left hand side
+ 	*/
 	DblLink& operator=(const DblLink&); //deep copy during assignment
+
+	/*!
+	 * \brief Determines if linked list is empty.
+	 * \returns bool true if list is empty
+ 	*/
 	bool empty(); //is empty?
 
-	/*! 
- 	* Determine if the linked list contains the element 
+	/*!
+	 * \brief determines if passed element is in linked list
+	 * \param eltType element to search for
+	 * \returns bool true if linked list contains element
  	*/
 	bool find(eltType); //does linked list contain element?
 
 	/*! 
-	 * \brief insert such that order is preserved 
+	 * \brief Insert element into linked list in sorted position.
+	 * \param eltType element to insert
+	 *
+	 * Assumes < and > operators are implemented and consistent for eltType
 	 */
 	void insert(eltType); //ordered insert
+
+	/*!
+	 * \brief Remove an element from the linked list
+	 * \param eltType element to remove
+	 *
+	 * Element to be removed must be within list.
+ 	*/
 	void remove(eltType); //removes element
 
 private:
 	Node<eltType>*	head; //pointer to first node
 	Node<eltType>*	copy(Node<eltType> *); //get a copy of a node
+
+	/*!
+	 * \brief destroys node and all successive nodes
+	 * \param Node<eltType>* pointer to first node to destroy
+	 *
+	 * Function is used by destructor.
+ 	*/
 	void	destroy(Node<eltType> *); //destroys node and all successive nodes
 	friend class DblLinkItr<eltType>; //allow iterator to modify private values
 };
@@ -126,10 +155,11 @@ template <typename eltType> DblLink<eltType>
 	return *this;
 }
 
-
-/*!
-*	\brief inserts the passed value into the linked list such that it remains ordered.
-*/
+/*************************************************************************/
+/*   Function name:   insert	*/
+/*   Description:   insert item into list.
+/*   Parameters:    eltType x - value to input - input */
+/*************************************************************************/
 template <typename eltType>
 void DblLink<eltType>::insert(eltType x) {
 	if (empty() || x > head->data) {

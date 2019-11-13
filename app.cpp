@@ -194,18 +194,21 @@ void printEverything(const string &filename, TermList *ThePoly, double evalX) {
 	ThePoly = new TermArrayList;
 	ThePoly->readIntoList(filename);
 	ThePoly->printIteratively();
+	ThePoly->printRecursively();
 	ThePoly->printPtr();
 	cout << "P(" << evalX << ")=" << (*ThePoly)(evalX) << endl;
 
 	ThePoly = new TermVectorList;
 	ThePoly->readIntoList(filename);
 	ThePoly->printIteratively();
+	ThePoly->printRecursively();
 	ThePoly->printPtr();
 	cout << "P(" << evalX << ")=" << (*ThePoly)(evalX) << endl;
 
 	ThePoly = new TermDblList;
 	ThePoly->readIntoList(filename);
 	ThePoly->printIteratively();
+	ThePoly->printRecursively();
 	ThePoly->printPtr();
 	cout << "P(" << evalX << ")=" << (*ThePoly)(evalX) << endl;
 }
