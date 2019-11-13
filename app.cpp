@@ -1,15 +1,16 @@
+/*!	\file DblLinkedList.h
+ *	\brief Runs data structure functions on a data file
+ *	\author Dr. Spiegel, modified by Anthony Dellinger
+ *
+ *	This file inputs a file name and stores it using one of the TermList subclasses.
+ *	The functions of the subclass are called through polymorphism. If the file
+ *	is run with the command line arguments of filename x_value, the program
+ *	will be run in batch mode, and every function of every data structure will be
+ *	tested.
+ */
 /****************************************************************/
-/*   Author:         Dr. Spiegel (with thanks to Adam Tal)      */
-/*   					modified by Anthony Dellinger           */
 /*   Course:         CIS237                                     */
 /*   Filename:       app.cpp                                    */
-/*   Purpose:        This Example inputs a file name and demon- */
-/*                   strates how to store it using a subclass   */
-/*                   of an abstract base class that incorporates*/
-/*                   virtual functions to enable polymorphism   */
-/*                   If a file name is                          */
-/*                   input through the command line all of the  */
-/*                   options will be done automatically         */
 /****************************************************************/
 
 #include <iostream>
@@ -26,51 +27,39 @@ using namespace std;
 
 
 /*********************************************************************/
-/*   Function Name: displayFunctionMenu()                            */
-/*                                                                   */
-/*   Description: Displays the data structure functions on screen    */
-/*********************************************************************/
+/*!
+ * \brief Displays list of data structure functions to the terminal.
+ */
 void displayFunctionMenu();
 
-/*********************************************************************/
-/*   Function Name: displayDSMenu()                                  */
-/*                                                                   */
-/*   Description: Displays the data structure menu on the screen.    */
-/*********************************************************************/
+
+/*!
+ * \brief Displays list of data structures to the terminal.
+ */
 void displayDSMenu();
 
-/*********************************************************************/
-/*   Function Name: printEverything                                  */
-/*                                                                   */
-/*   Description: Takes in a filename and xValue and tests every     */
-/*                function of the datastructure                      */
-/*                                                                   */
-/*   Parameters:  string fileName - file name sent to every function, input */
-/*                TermList ThePoly - pointer to TermList, will be           */
-/*                		replaced by datastructures, input                   */
-/*                double evalX - x value to evaluate polynomials for, input */
-/*********************************************************************/
+
+/*!
+ * \brief Takes in a filename and xValue and tests every function of the datastructure
+ * \param string file name sent to every function - input
+ * \param TermList pointer to TermList - input
+ * \param double x value to evaluate polynomials for
+ */
 void printEverything(const string &fileName, TermList *ThePoly, double evalX);
 
-/*********************************************************************/
-/*   Function Name: evalPoly                                         */
-/*                                                                   */
-/*   Description: Computes P(x) for variable x, supplied by the user.*/
-/*                                                                   */
-/*   Parameters:  TermArrayList *ThePoly - The TermList object, input*/
-/*********************************************************************/
+
+/*!
+ * \brief Computes P(x) for variable x, supplied by the user
+ * \param TermArrayList* the polynomial to be evaluated - input
+ */
 void evalPoly(TermList *ThePoly);
 
 
-/*********************************************************************/
-/*   Function Name: main                                               */
-/*                                                                     */
-/*   Description: Determines if program should be run interactively or */
-/* 			in batch mode, then runs the data structures accordingly   */
-/*                                                                     */
-/*   Parameters:  int argc - the amount of command line args, input    */
-/*                char *argv[] - list of command line arguments, input */
-/*********************************************************************/
+/*!
+ * \brief Determines if program should be run interactively or in batch mode, then runs the data structures accordingly
+ * \param int argc amount of command line arguments, input
+ * \param char* argv[] list of command line arguments, input
+ */
 int main(int argc, char *argv[]) {
 	fstream file;
 	TermList *ThePoly;

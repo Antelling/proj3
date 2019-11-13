@@ -1,9 +1,11 @@
 /*!	\file DblLinkedList.h
  *	\brief Header for custom Doubly Linked List implementation.
+ *	\author Anthony Dellinger
+ *
+ *	Contains definition and implementation of doubly linked
+ *	list and doubly linked list iterator for project 2.
  */
-
 /************************************************************/
-/*   Author: Anthony Dellinger */
 /*   Major: Computer Science	*/
 /*   Creation Date: Oct 5 2019	*/
 /*   Due Date: Oct 18 2019	*/
@@ -11,9 +13,6 @@
 /*   Professor Name: Dr. Spiegel	*/
 /*   Assignment: #2a	*/
 /*   Filename: proj2.h	*/
-/*   Purpose: Contains definition and implementation of */
-/*				doubly linked list and doubly linked list */
-/*				iterator for project 2. */
 /************************************************************/
 
 #ifndef _LinkedList_
@@ -46,7 +45,7 @@ public:
 	DblLink(DblLink &); // deep copy constructor
 
 	/*!
-	 * \brief Constructor for linked list
+	 * \brief Destructor for linked list
  	*/
 	~DblLink(); //destructor
 

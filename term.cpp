@@ -1,13 +1,15 @@
-/***************************************************************
-Author:         Dr. Spiegel
-Filename:       Term.cpp   
-Purpose:        A Term holds a single Term of a Polynomial. Capabilities:
-		- Evaluate itself 
+/*!
+ * \author Dr. Spiegel
+ * \brief implementation of Term
+ *
+ * A term holds a single Term of a polynomial. Capabilities:
+		- Evaluate itself
 		- Multiply coefficient by a scalar
 		- Increment coefficient by a scalar
 		- Compare in several ways
 		- set and get (of course)
-***************************************************************/
+ */
+
 #include <iostream>
 #include <iomanip>
 #include <cmath>
