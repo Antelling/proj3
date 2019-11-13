@@ -1,6 +1,6 @@
-# todo:
+# Project 3
 
+Anthony Dellinger
 
-4. update batch mode routine
-6. make doxygen documentation
-7. do the analysis part
+Doxygen:
+http://acad.kutztown.edu/~adell892/html/html/index.html

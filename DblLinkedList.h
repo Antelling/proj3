@@ -108,10 +108,11 @@ private:
 	friend class DblLinkItr<eltType>;
 };
 
-/*************************************************************************/
-/*   Class name:   DblLinkItr	*/
-/*   Description:   An iterator over the elements of a DblLink instance. */
-/*************************************************************************/
+/*!
+ * \class DblLinkItr
+ * \brief An iterator over the elements of a DblLink instance
+ * @tparam eltType
+ */
 template<typename eltType>
 class DblLinkItr {
 public:

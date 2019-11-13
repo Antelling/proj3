@@ -1,4 +1,5 @@
 /*!
+ * \file term.cpp
  * \author Dr. Spiegel
  * \brief implementation of Term
  *

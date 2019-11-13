@@ -1,4 +1,5 @@
 /*!
+ * \file term.h
  * \author Dr. Spiegel
  * \brief A Term holds one term of a polynomial. A term can be created, evaluated, compared, and printed.
  */
@@ -10,6 +11,12 @@
 
 using namespace std;
 
+/*!
+ * \class Term
+ * \brief Class that holds a singly polynomial term.
+ *
+ * Will store the coefficient and exponent, and has functions to compare two terms.
+ */
 class Term
 {
 public:

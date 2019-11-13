@@ -1,4 +1,5 @@
 /*!
+ * \file TermList.h
  * \brief TermList abstract class
  * \author Dr. Spiegel
  *
@@ -14,6 +15,13 @@
 
 using namespace std;
 
+/*!
+ * \class TermList
+ * \brief Abstract base class for classes that can store and operate on polynomials.
+ *
+ * Prototypes readIntoList, printIteratively, printRecursively, printPtrs, and the () operator.
+ * Known sublcasses: TermArrayList, TermVectorList, TermDblList
+ */
 class TermList {
 public:
 
