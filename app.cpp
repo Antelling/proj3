@@ -182,23 +182,35 @@ void displayDSMenu() {
 void printEverything(const string &filename, TermList *ThePoly, double evalX) {
 	ThePoly = new TermArrayList;
 	ThePoly->readIntoList(filename);
-	ThePoly->printIteratively();
-	ThePoly->printRecursively();
-	ThePoly->printPtr();
+	for(int i = 0; i < 12; i++) {
+		ThePoly->printIteratively();
+	}
+	for(int i = 0; i < 12; i++) {
+		ThePoly->printRecursively();
+	}
+	for(int i = 0; i < 12; i++) {
+		ThePoly->printPtr();
+	}
 	cout << "P(" << evalX << ")=" << (*ThePoly)(evalX) << endl;
 
 	ThePoly = new TermVectorList;
 	ThePoly->readIntoList(filename);
-	ThePoly->printIteratively();
-	ThePoly->printRecursively();
-	ThePoly->printPtr();
+	for(int i = 0; i < 12; i++) {
+		ThePoly->printIteratively();
+	}
+	for(int i = 0; i < 12; i++) {
+		ThePoly->printRecursively();
+	}
 	cout << "P(" << evalX << ")=" << (*ThePoly)(evalX) << endl;
 
 	ThePoly = new TermDblList;
 	ThePoly->readIntoList(filename);
-	ThePoly->printIteratively();
-	ThePoly->printRecursively();
-	ThePoly->printPtr();
+	for(int i = 0; i < 12; i++) {
+		ThePoly->printIteratively();
+	}
+	for(int i = 0; i < 12; i++) {
+		ThePoly->printRecursively();
+	}
 	cout << "P(" << evalX << ")=" << (*ThePoly)(evalX) << endl;
 }
 
